@@ -1,4 +1,6 @@
 <h1><%= @post.title %></h1>
 <p><%= @post.content %></p>
+<%= link_to "Edit", edit_post_path(@post) %>
+<%= button_to "Delete", post_path(@post), method: :delete %>
 <%= link_to "See all posts", posts_path %>
 <%= link_to "Add a new post", new_post_path %>

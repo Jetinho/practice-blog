@@ -19,15 +19,16 @@ class PostsController < ApplicationController
   end
 
   def edit
-
   end
 
   def update
-
+    @post.update(set_params)
+    redirect_to post_path(@post)
   end
 
   def destroy
-
+    @post.destroy
+    redirect_to posts_path
   end
 
 private
