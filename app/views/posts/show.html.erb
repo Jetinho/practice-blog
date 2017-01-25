@@ -1,5 +1,10 @@
 <h1><%= @post.title %></h1>
 <p><%= @post.content %></p>
+<p><%= @post.created_at.strftime("Posted on %d/%m/%y at %H:%M")  %></p>
+<% unless @post.updated_at == @post.created_at %>
+  <p><%= @post.updated_at.strftime("Updated on %d/%m/%y at %H:%M")  %></p>
+<% end %>
+
 <%= link_to "Edit", edit_post_path(@post) %>
 <%= button_to "Delete", post_path(@post), method: :delete %>
 <%= link_to "See all posts", posts_path %>
