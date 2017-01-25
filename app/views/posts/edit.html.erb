@@ -1,16 +1,4 @@
 <h1>Feel free to update your article</h1>
 
-<%= form_for @post, url: post_path do |f| %>
-  <p>
-    <%= f.label :title %>
-    <%= f.text_field :title%>
-  </p>
-  <p>
-    <%= f.label :content %>
-    <%= f.text_field :content %>
-  </p>
+<%= render "post_form" %>
 
-  <p>
-    <%= f.submit %>
-  </p>
-<% end %>
