@@ -6,7 +6,6 @@ class PostsController < ApplicationController
   end
 
   def show
-
   end
 
   def new
@@ -14,7 +13,9 @@ class PostsController < ApplicationController
   end
 
   def create
-
+    post = Post.new(set_params)
+    post.save
+    redirect_to post_path(post)
   end
 
   def edit
@@ -34,5 +35,7 @@ private
   def set_post
     @post = Post.find(params[:id])
   end
-
+  def set_params
+    params.require(:post).permit(:title, :content)
+  end
 end
