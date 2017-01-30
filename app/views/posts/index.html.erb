@@ -1,4 +1,4 @@
-<h1>Jetinho's</h1>
+<h1 class= "text-center">Jetinho's</h1>
 <h2>Welcome to my practice blog</h2>
 <h3>All posts</h3>
 <% unless @posts.present? %>
@@ -6,9 +6,11 @@
 <% end %>
 <ul>
   <% @posts.each do |post| %>
-    <li>
-      <%= link_to post.title, post_path(post)  %>
-    </li>
+    <div>
+    <h4><%= post.title %></h4>
+    <%= raw(post.content).truncate(358) + "... " %><%= link_to "Read more", post_path(post) %>
+
+    </div>
   <% end %>
 </ul>
 <%= link_to "Add a new post", new_post_path %>
