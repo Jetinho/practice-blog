@@ -1,14 +1,19 @@
-<h1>Jetinho's</h1>
-<h2>Welcome to my practice blog</h2>
-<h3>All posts</h3>
+<h2 class="text-center">Welcome to my practice blog</h2>
+<h3 class="white">Here are our posts:</h3>
 <% unless @posts.present? %>
   <p>No post yet</p>
 <% end %>
-<ul>
-  <% @posts.each do |post| %>
-    <li>
-      <%= link_to post.title, post_path(post)  %>
-    </li>
-  <% end %>
-</ul>
-<%= link_to "Add a new post", new_post_path %>
+<% @posts.each do |post| %>
+
+  <div class="index-box">
+    <h4><%= post.title %></h4>
+    <p class="text-justify">
+      <%= raw post.content.truncate(250) + "... "%>
+    </p>
+    <%= link_to "Read more", post_path(@posts[0]), class: "btn btn-primary text"  %>
+  </div>
+<% end %>
+<div class="text-center down-button">
+  <%= link_to "Add a post", new_post_path, class: "btn btn-primary" %>
+</div>
+

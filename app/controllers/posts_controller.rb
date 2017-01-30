@@ -5,6 +5,10 @@ class PostsController < ApplicationController
     @posts = Post.all
   end
 
+  def home
+    @posts = Post.last(3)
+  end
+
   def show
   end
 
