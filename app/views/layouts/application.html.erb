@@ -2,18 +2,35 @@
 <html>
   <head>
     <title>PracticeBlog</title>
-    <%= csrf_meta_tags %>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>--- TODO ---</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link href="https://fonts.googleapis.com/css?family=Oswald|Raleway" rel="stylesheet">
 
   </head>
-
   <body>
     <div class="grey-wrapper">
       <div class="header">
+        <p class="alert"><%= alert %></p>
+        <p class="notice"><%= notice %></p>
         <h1 class= "text-center">Jetinho's</h1>
+
+        <div class="text-center">
+          <% if user_signed_in? %>
+            <%= button_to "Sign-out", destroy_user_session_path, method: :delete, class: "btn btn-danger" %>
+          <% else %>
+            <%= link_to "Sign In", new_user_session_path, class: "btn btn-info" %>
+          <% end %>
+        </div>
       </div>
       <div class="container">
         <div class="col-sm-10 col-sm-offset-1 col-xs-12">
@@ -21,5 +38,15 @@
         </div>
       </div>
     </div>
+
+
+
+    <!-- TODO: Here goes your content! -->
+
+
+
+    <!-- Including Bootstrap JS (with its jQuery dependency) so that dynamic components work -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
   </body>
 </html>
