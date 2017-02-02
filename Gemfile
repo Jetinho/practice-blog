@@ -10,6 +10,7 @@ gem 'bootstrap-sass'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'ckeditor'
+gem 'devise'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.1'
